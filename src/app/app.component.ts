@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   title = 'angular-shop';
   loading: boolean = false;
   products$: Observable<IProduct[]>;
+  filter: string = '';
 
   ngOnInit(): void {
     this.loading = true;
