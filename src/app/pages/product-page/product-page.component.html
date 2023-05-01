@@ -1,0 +1,14 @@
+<h1 class="font-bold mb-2 text-center text-lg">{{ title | titlecase }}</h1>
+
+<input
+  type="text"
+  class="mb-2 p-2 rounded border border-gray-400 w-full"
+  placeholder="Filter products by name"
+  [(ngModel)]="filter"
+>
+
+<p *ngIf="loading" class="text-2xl text-center">Loading</p>
+
+<div *ngIf="products$ | async as products">
+  <app-product *ngFor="let product of products | filterProducts: filter" [product]="product"></app-product>
+</div>
