@@ -8,9 +8,22 @@ const routes: Routes = [{
   component: ProductPageComponent,
 },
   {
-    path: 'about',
+    path: 'specials',
     component: AboutPageComponent,
-  }];
+  },
+  {
+    path: 'contacts',
+    component: AboutPageComponent,
+  },
+  {
+    path: 'site-map',
+    component: AboutPageComponent,
+  },
+  {
+    path: 'brand',
+    component: AboutPageComponent,
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
