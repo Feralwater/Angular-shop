@@ -11,6 +11,7 @@ import { FilterProductsPipe } from './pipes/filter-products.pipe';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     ProductPageComponent,
     AboutPageComponent,
     NavigationComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
