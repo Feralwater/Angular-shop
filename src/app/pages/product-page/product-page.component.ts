@@ -9,7 +9,6 @@ import {ProductsService} from "../../services/products.service";
   styleUrls: ['./product-page.component.scss']
 })
 export class ProductPageComponent {
-  title = 'angular-shop';
   loading: boolean = false;
   products$: Observable<IProduct[]>;
   filter: string = '';
