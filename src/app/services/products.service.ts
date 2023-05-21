@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {catchError, Observable, throwError} from "rxjs";
-import {IProduct} from "../models/product";
+import {ICartProduct, IProduct} from "../models/product";
 import {ErrorService} from "./error.service";
 
 @Injectable({
@@ -20,12 +20,12 @@ export class ProductsService {
     );
   }
 
-  saveCart(cart: IProduct[]){
+  saveCart(cart: ICartProduct[]){
     return localStorage.setItem('cart', JSON.stringify(cart));
   }
 
-  addToCart(product: IProduct) {
-    let cart: IProduct[] = [];
+  addToCart(product: ICartProduct) {
+    let cart: ICartProduct[] = [];
     if (localStorage.getItem('cart') !== null) {
       cart = JSON.parse(localStorage.getItem('cart') || '{}');
     }
@@ -33,23 +33,23 @@ export class ProductsService {
     this.saveCart(cart);
   }
 
-  loadCart(): IProduct[] {
+  loadCart(): ICartProduct[] {
     if (localStorage.getItem('cart') !== null) {
       return JSON.parse(localStorage.getItem('cart') || '{}');
     }
     return [];
   }
 
-  productInCart(product: IProduct): boolean {
-    let cart: IProduct[] = [];
+  productInCart(product: ICartProduct): boolean {
+    let cart: ICartProduct[] = [];
     if (localStorage.getItem('cart') !== null) {
       cart = JSON.parse(localStorage.getItem('cart') || '{}');
     }
     return cart.some(p => p.id === product.id);
   }
 
-  removeProductFromCart(product: IProduct) {
-    let cart: IProduct[] = [];
+  removeProductFromCart(product: ICartProduct) {
+    let cart: ICartProduct[] = [];
     if (localStorage.getItem('cart') !== null) {
       cart = JSON.parse(localStorage.getItem('cart') || '{}');
     }

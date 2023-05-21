@@ -12,6 +12,7 @@ import { ProductPageComponent } from './pages/product-page/product-page.componen
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { HeaderComponent } from './components/header/header.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HeaderComponent } from './components/header/header.component';
     AboutPageComponent,
     NavigationComponent,
     HeaderComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,

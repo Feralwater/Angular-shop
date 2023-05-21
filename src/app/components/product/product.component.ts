@@ -12,7 +12,9 @@ export class ProductComponent {
   details: boolean = false;
 
   addToCart(product: IProduct) {
-    this.productsService.addToCart(product);
+    this.productsService.addToCart({
+      ...product, quantity: 1
+    });
   }
 
   constructor(private productsService: ProductsService) {
